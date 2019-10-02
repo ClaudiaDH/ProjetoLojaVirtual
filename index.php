@@ -1,6 +1,15 @@
 <?php 
     $nomeSistema = "Logo Claudia!";
     $usuario = ["nome" => "Claudia"];
+    
+    //Cada array tera informacoes de cada produto.
+    //Array de posicao com array associativa.
+    $produtos= [
+        ["nome" => "Curso Fullstack", "preco" => 1200.00, "duracao" => "5 meses"],
+        ["nome" => "Curso Marketing", "preco" => 1000.00, "duracao" => "4 meses"],
+    ];
+
+    $categorias=["Cursos", "Palestras", "Artigos"];
 ?>
 
 <!DOCTYPE html>
@@ -48,36 +57,45 @@
     </header>
 
     <main>
-        <section class="container m-4">
+        <section >
+       
+            <nav>
+                <ul class="nav bg-dark text-white d-flex justify-content-between p-4">
+                <?php foreach($categorias as $categoria){ ?>
+                    <li class="nav-item"><a class="nav-link text-white" href="#"><?php echo $categoria ?></a></li>
+                <?php }?>
+                </ul>
+            </nav>
+        
+      
+            
+        </section>
 
-            <div class="row justify-content-between">
-                <div class="col-lg-3 card text-center">
-                    <h1>Super Computador</h1>
-                    <img src="imagem/pc1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-text">R$15.000</h5>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+        <section class="container mt-4">
+
+            <div class="row justify-content-between ">
+                <?php if(isset($produtos) && $produtos != []){ ?>
+                    <?php foreach($produtos as $produto){ ?>
+                    <div class="col-lg-3 card text-center">
+                        <!--Imprimir o nome de cada produto-->
+                        <h1><?php echo $produto['nome']; ?></h1>
+                        <img src="imagem/pc1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-text"><?php echo $produto['preco']; ?></h5>
+                            <a href="#" class="btn btn-primary">Comprar</a>
+                        </div>
                     </div>
-                </div>
+                    <!--Fechando o foreach-->
+                    <?php } ?>
+                    <!--Fechando o if-->
+                <?php }else { ?>
+                    <h1>Não tem produtos cadastrados nessa sessao :(</h1>
+        
+                <?php } ?>                
+
+                
 
 
-                <div class="col-lg-3 card text-center">
-                    <h1>Super Computador</h1>
-                    <img src="imagem/pc1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-text">R$ 15.000</h5>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 card text-center">
-                    <h1>Super Computador</h1>
-                    <img src="imagem/pc1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-text">R$ 15.000</h5>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
             </div>
 
 
