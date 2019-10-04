@@ -2,12 +2,7 @@
     $nomeSistema = "Logo Claudia!";
     $usuario = ["nome" => "Claudia"];
     
-    //Cada array tera informacoes de cada produto.
-    //Array de posicao com array associativa.
-    $produtos= [
-        ["nome" => "Curso Fullstack", "preco" => 1200.00, "duracao" => "5 meses", "img" => "imagem/pc1.jpg"],
-        ["nome" => "Curso Marketing", "preco" => 1000.00, "duracao" => "4 meses", "img" => "imagem/pc1.jpg"],
-    ];
+
 
     $categorias=["Cursos", "Palestras", "Artigos"];
 ?>
@@ -70,36 +65,32 @@
       
             
         </section>
-
-        <section class="container mt-4">
-
-            <div class="row justify-content-between ">
-                <?php if(isset($produtos) && $produtos != []){ ?>
-                    <?php foreach($produtos as $produto){ ?>
-                    <div class="col-lg-3 card text-center">
-                        <!--Imprimir o nome de cada produto-->
-                        <h1><?php echo $produto['nome']; ?></h1>
-                        <img src="<?php echo $produto["img"]; ?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-text"><?php echo $produto['preco']; ?></h5>
-                            <a href="carrinho.php?nomeProduto=<?php echo $produto['nome'];?>" class="btn btn-primary">Comprar</a>
-                        </div>
-                    </div>
-                    <!--Fechando o foreach-->
-                    <?php } ?>
-                    <!--Fechando o if-->
-                <?php }else { ?>
-                    <h1>Não tem produtos cadastrados nessa sessao :(</h1>
-        
-                <?php } ?>                
-
-                
-
-
+        <section class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Carrinho de compras</h1>
+                </div>
             </div>
-
-
+            <div class="col-12">
+                <div class="row card">
+                    <div class="col-12">
+                        <h3>voce esta comprando o curso <?php echo $_GET['nomeProduto']; ?></h3>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <form class="d-flex flex-column p-3" method="post" action="sucesso.php" >
+                            <input type="text" name="nomeCompleto" placeholder="Digite seu nome">
+                            <input type="text" name="cpf" placeholder="Digite seu CPF">
+                            <input type="number" name="cartao" placeholder="Digite o numero do cartao">
+                            <input type="date" name="validadeCartao" placeholder="Digite a data de validade">
+                            <input type="number" name="codigoCartao" placeholder="Dgite o CV">
+                            <button class="btn btn-success" type="submit">Finalizar a Compra</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
+
+ 
     </main>
 
 </body>
