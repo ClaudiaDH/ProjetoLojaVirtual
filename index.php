@@ -1,17 +1,4 @@
-<?php 
-    $nomeSistema = "Logo Claudia!";
-    $usuario = ["nome" => "Claudia"];
-    
-    //Cada array tera informacoes de cada produto.
-    //Array de posicao com array associativa.
-    $produtos= [
-        ["nome" => "Curso Fullstack", "preco" => 1200.00, "duracao" => "5 meses", "img" => "imagem/pc1.jpg"],
-        ["nome" => "Curso Marketing", "preco" => 1000.00, "duracao" => "4 meses", "img" => "imagem/pc1.jpg"],
-    ];
-
-    $categorias=["Cursos", "Palestras", "Artigos"];
-?>
-
+<?php include_once("config/variaveis.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,50 +13,12 @@
 </head>
 
 <body>
-    <header class="d-flex justify-content-between align-items-center p-3">
+    <!--copia o que ta no arquivo header.php e cola aqui-->
+    <?php require_once("header.php"); ?>
 
-        <div id="logo">
-            <h1><?php echo $nomeSistema; ?> </h1>
-        </div>
-        <nav>
-            <ul class="nav">
-
-                <?php if (isset($usuario) && $usuario != []) { ?>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="">Cursos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Olá <?php echo $usuario['nome']?></a>
-                </li>
-                <?php }else { ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Log In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cadastrar</a>
-                </li>
-                <?php } ?>
-
-            </ul>
-        </nav>
-
-    </header>
-
+   
     <main>
-        <section >
        
-            <nav>
-                <ul class="nav bg-dark text-white d-flex justify-content-between p-4">
-                <?php foreach($categorias as $categoria){ ?>
-                    <li class="nav-item"><a class="nav-link text-white" href="#"><?php echo $categoria ?></a></li>
-                <?php }?>
-                </ul>
-            </nav>
-        
-      
-            
-        </section>
 
         <section class="container mt-4">
 
