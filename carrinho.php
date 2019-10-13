@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Carrinho</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet" />
@@ -34,7 +34,7 @@
                             <input type="text" name="cpf" placeholder="Digite seu CPF">
                             <input type="number" name="cartao" placeholder="Digite o numero do cartao">
                             <input type="date" name="validadeCartao" placeholder="Digite a data de validade">
-                            <input type="number" name="codigoCartao" placeholder="Dgite o CV">
+                            <input type="password" name="codigoCartao" placeholder="Digite o CV">
                             <button class="btn btn-success" type="submit">Finalizar a Compra</button>
                         </form>
                     </div>
