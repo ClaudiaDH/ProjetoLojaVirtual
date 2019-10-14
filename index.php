@@ -1,4 +1,4 @@
-<?php include_once("config/variaveis.php"); ?>
+<?php include_once("variaveis.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
