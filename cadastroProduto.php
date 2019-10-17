@@ -68,7 +68,7 @@
         //fazer o move_upload files
         //retrona um booleano para saber se esta dando certo ou nao.
         $deucerto = move_uploaded_file($localTmp, $caminhoSalvo);
-        exit;
+        //exit;
 
 
        
