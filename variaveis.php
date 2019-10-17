@@ -2,7 +2,7 @@
     //precisa inicializar toda vez que usarmos as informacoes da sessao.
     session_start();
     $nomeSistema = "Cursos Digitais";
-    $usuario = isset($_SESSION['usuarios'])? $_SESSION['usuario']: [];
+    $usuario = isset($_SESSION['usuario'])? $_SESSION['usuario']: [];
     
     //pegar o arquivo e colocar dentro da variavel
     $nomeArquivo = "produto.json";
