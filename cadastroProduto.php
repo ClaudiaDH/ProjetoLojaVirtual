@@ -57,6 +57,7 @@
     //Saber se a função estava recebendo o parametro de forma correta, e se estava criando a array de forma correta.
     if($_POST){
         //salvando arquivo
+
         //separa as info que recebo do meu file em variaveis diferentes.
         //pega o nome que esta dentro da array imgProduto.Que contem todas as info do produto.
         $nomeImg = $_FILES['imgProduto']['name'];
@@ -64,7 +65,9 @@
         $localTmp = $_FILES['imgProduto']['tmp_name'];
         //caminho para salvar dentro do Json
         //Onde vou salvar a imagem
-        $caminhoSalvo = "imagem/".$nomeImg;
+        
+        $dataatual = date("d-m-y");
+        $caminhoSalvo = "imagem/".$dataatual.$nomeImg;
         //fazer o move_upload files
         //retrona um booleano para saber se esta dando certo ou nao.
         $deucerto = move_uploaded_file($localTmp, $caminhoSalvo);
@@ -72,7 +75,7 @@
 
 
        
-        echo cadastrarProduto($_POST['nomeProduto'], $_POST['descProduto'], $_POST['imgProduto'], $_POST['precoProduto']);
+        echo cadastrarProduto($_POST['nomeProduto'], $_POST['descProduto'],$caminhoSalvo,  $_POST['precoProduto']);
     }
 ?>
 
