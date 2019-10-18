@@ -5,7 +5,8 @@
     $usuario = isset($_SESSION['usuario'])? $_SESSION['usuario']: [];
     
     //pegar o arquivo e colocar dentro da variavel
-    $nomeArquivo = "produto.json";
+    //com o DIR eu voltei a variavel para a pasta config
+    $nomeArquivo = __DIR__."/../produto.json";
 
     //abrir o arquivo
     //maneira mais resumida
@@ -13,6 +14,8 @@
     //$arquivo = file_get_contents($nomeArquivo);
     //$produtos = json_decode($arquivo,true);
     $produtos = json_decode(file_get_contents($nomeArquivo), true);
+
+    //echo $nomeArquivo;
 
     //Cada array tera informacoes de cada produto.
     //Array de posicao com array associativa.

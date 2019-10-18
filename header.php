@@ -1,4 +1,4 @@
-<?php include_once("variaveis.php");?>
+<?php include_once("config/variaveis.php");?>
 <header class="d-flex justify-content-between align-items-center p-3">
 
 <div id="logo">
@@ -15,9 +15,13 @@
         <li class="nav-item">
             <a class="nav-link" href="">Olá <?php echo $usuario['nome']?></a>
         </li>
+        <!--Configurando botao de sair -->
+        <li class="nav-item">
+            <a class="nav-link" href="sair.php">Sair</a>
+        </li>
         <?php }else { ?>
         <li class="nav-item">
-            <a class="nav-link" href="#">Log In</a>
+            <a class="nav-link" href="login.php">Log In</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Cadastrar</a>
